@@ -1,0 +1,92 @@
+client/                              ← root
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Contact.jsx
+│   │   └── Loader.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── ProjectDetails.jsx
+│   │   └── AdminLogin.jsx
+│   ├── admin/
+│   │   ├── Dashboard.jsx
+│   │   ├── AddProject.jsx
+│   │   └── Messages.jsx
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   ├── hooks/
+│   │   └── useFetch.js
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   │   └── constants.js
+│   ├── assets/
+│   │   ├── images/
+│   │   └── icons/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── server/
+│   ├── config/
+│   │   └── db.js
+│   ├── models/
+│   │   ├── Project.js
+│   │   ├── Message.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── projectRoutes.js
+│   │   ├── contactRoutes.js
+│   │   └── authRoutes.js
+│   ├── controllers/
+│   │   ├── projectController.js
+│   │   ├── contactController.js
+│   │   └── authController.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   └── errorMiddleware.js
+│   ├── utils/
+│   │   └── generateToken.js
+│   ├── .env
+│   ├── .gitignore
+│   ├── index.js
+│   └── package.json
+├── public/
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+
+
+# Root par server folder bana hain (agar nahi bana)
+mkdir server -Force
+
+# Frontend folders
+mkdir src\components, src\pages, src\admin, src\context, src\hooks, src\services, src\utils -Force
+mkdir src\assets\images, src\assets\icons -Force
+
+# Backend folders
+mkdir server\config, server\models, server\routes, server\controllers, server\middleware, server\utils -Force
+
+# Frontend files
+New-Item src\components\Navbar.jsx, src\components\Footer.jsx, src\components\Hero.jsx, src\components\About.jsx, src\components\Skills.jsx, src\components\Projects.jsx, src\components\ProjectCard.jsx, src\components\Experience.jsx, src\components\Contact.jsx, src\components\Loader.jsx -ItemType File -Force
+New-Item src\pages\Home.jsx, src\pages\ProjectDetails.jsx, src\pages\AdminLogin.jsx -ItemType File -Force
+New-Item src\admin\Dashboard.jsx, src\admin\AddProject.jsx, src\admin\Messages.jsx -ItemType File -Force
+New-Item src\context\AuthContext.jsx, src\hooks\useFetch.js, src\services\api.js, src\utils\constants.js -ItemType File -Force
+New-Item src\App.jsx, src\main.jsx, src\index.css -ItemType File -Force
+
+# Backend files
+New-Item server\index.js -ItemType File -Force
+New-Item server\config\db.js -ItemType File -Force
+New-Item server\models\Project.js, server\models\Message.js, server\models\User.js -ItemType File -Force
+New-Item server\routes\projectRoutes.js, server\routes\contactRoutes.js, server\routes\authRoutes.js -ItemType File -Force
+New-Item server\controllers\projectController.js, server\controllers\contactController.js, server\controllers\authController.js -ItemType File -Force
+New-Item server\middleware\authMiddleware.js, server\middleware\errorMiddleware.js -ItemType File -Force
+New-Item server\utils\generateToken.js -ItemType File -Force
+New-Item server\.env, server\.gitignore -ItemType File -Force
