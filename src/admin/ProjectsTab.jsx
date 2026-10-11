@@ -207,7 +207,7 @@ const ProjectsTab = () => {
     <>
       {/* Header */}
       <div className="mb-6 flex items-center justify-between flex-wrap gap-4">
-        <div className="bg-[#0d0d24] border border-white/[0.06] rounded-xl px-5 py-3">
+        <div className="bg-[#0d0d24] border border-white/6 rounded-xl px-5 py-3">
           <span className="text-neutral-400 text-sm">Total:</span>{' '}
           <span className="font-bold text-teal-400">{projects.length}</span>
         </div>
@@ -250,7 +250,7 @@ const ProjectsTab = () => {
                 onChange={handleChange}
                 placeholder="E-Commerce Platform"
                 required
-                className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
               />
             </div>
 
@@ -265,7 +265,7 @@ const ProjectsTab = () => {
                 placeholder="Full-featured online store with product catalog..."
                 rows="3"
                 required
-                className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
               />
             </div>
 
@@ -351,7 +351,7 @@ const ProjectsTab = () => {
                 value={formData.tech}
                 onChange={handleChange}
                 placeholder="React, Node.js, MongoDB, Tailwind"
-                className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
               />
             </div>
 
@@ -368,7 +368,7 @@ const ProjectsTab = () => {
                   value={formData.github}
                   onChange={handleChange}
                   placeholder="https://github.com/..."
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
                 />
               </div>
 
@@ -383,7 +383,7 @@ const ProjectsTab = () => {
                   value={formData.live}
                   onChange={handleChange}
                   placeholder="https://example.com"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
                 />
               </div>
             </div>
@@ -420,7 +420,7 @@ const ProjectsTab = () => {
                     value={formData.role}
                     onChange={handleChange}
                     placeholder="Full-Stack Developer"
-                    className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                    className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
                   />
                 </div>
                 <div>
@@ -433,7 +433,7 @@ const ProjectsTab = () => {
                     value={formData.duration}
                     onChange={handleChange}
                     placeholder="3 weeks"
-                    className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                    className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
                   />
                 </div>
                 <div>
@@ -446,7 +446,7 @@ const ProjectsTab = () => {
                     value={formData.year}
                     onChange={handleChange}
                     placeholder="2025"
-                    className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
+                    className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50"
                   />
                 </div>
               </div>
@@ -462,7 +462,7 @@ const ProjectsTab = () => {
                   onChange={handleChange}
                   placeholder="What problem were you solving? Why did you build this?"
                   rows="3"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                 />
               </div>
 
@@ -477,7 +477,7 @@ const ProjectsTab = () => {
                   onChange={handleChange}
                   placeholder="How did you approach it?"
                   rows="3"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                 />
               </div>
 
@@ -507,7 +507,7 @@ const ProjectsTab = () => {
                   {formData.challenges.map((c, idx) => (
                     <div
                       key={idx}
-                      className="bg-[#151530] border border-white/[0.06] rounded-xl p-4"
+                      className="bg-[#151530] border border-white/6 rounded-xl p-4"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-xs text-neutral-500 font-mono">
@@ -529,7 +529,7 @@ const ProjectsTab = () => {
                           updateChallenge(idx, 'title', e.target.value)
                         }
                         placeholder="Challenge title (e.g., 3D Model Slowing Site)"
-                        className="w-full bg-[#0d0d24] border border-white/[0.06] rounded-lg px-3 py-2 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 mb-2"
+                        className="w-full bg-[#0d0d24] border border-white/6 rounded-lg px-3 py-2 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 mb-2"
                       />
 
                       <textarea
@@ -539,7 +539,7 @@ const ProjectsTab = () => {
                         }
                         placeholder="Solution (e.g., Lazy loading + moved heavy models to Contact section)"
                         rows="2"
-                        className="w-full bg-[#0d0d24] border border-white/[0.06] rounded-lg px-3 py-2 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                        className="w-full bg-[#0d0d24] border border-white/6 rounded-lg px-3 py-2 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                       />
                     </div>
                   ))}
@@ -557,7 +557,7 @@ const ProjectsTab = () => {
                   onChange={handleChange}
                   placeholder="Why this color scheme? Why this layout?"
                   rows="3"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                 />
               </div>
 
@@ -572,7 +572,7 @@ const ProjectsTab = () => {
                   onChange={handleChange}
                   placeholder="MERN Stack, JWT Auth, File Uploads, Email Integration"
                   rows="2"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                 />
               </div>
 
@@ -587,7 +587,7 @@ const ProjectsTab = () => {
                   onChange={handleChange}
                   placeholder="Lighthouse 95+, Mobile responsive 100%, Load time <1.5s"
                   rows="2"
-                  className="w-full bg-[#151530] border border-white/[0.06] rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
+                  className="w-full bg-[#151530] border border-white/6 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-teal-400/50 resize-none"
                 />
               </div>
             </div>
@@ -629,12 +629,12 @@ const ProjectsTab = () => {
           {projects.map((project) => (
             <div
               key={project._id}
-              className="bg-[#0d0d24] border border-white/[0.06] hover:border-white/10 rounded-2xl p-6 transition-colors"
+              className="bg-[#0d0d24] border border-white/6 hover:border-white/10 rounded-2xl p-6 transition-colors"
             >
               <div className="flex items-start gap-5">
                 {/* Image Thumbnail */}
                 {project.image && (
-                  <div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-[#151530] border border-white/10">
+                  <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-[#151530] border border-white/10">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -697,7 +697,7 @@ const ProjectsTab = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2 flex-shrink-0">
+                <div className="flex gap-2 shrink-0">
                   <button
                     onClick={() => handleEdit(project)}
                     className="p-2.5 bg-teal-400/10 border border-teal-400/20 text-teal-400 hover:bg-teal-400/20 rounded-xl transition-colors"

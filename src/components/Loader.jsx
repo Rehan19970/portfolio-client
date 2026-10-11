@@ -1,38 +1,55 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const Loader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0)
   const [hiding, setHiding] = useState(false)
+  const startTimeRef = useRef(null)
+  const rafRef = useRef(null)
 
   useEffect(() => {
-    // Simulate progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval)
-          return 100
-        }
-        // Random increment (5-15%)
-        return prev + Math.random() * 10 + 5
-      })
-    }, 100)
+    // ✅ Total duration: 1.4 seconds
+    const duration = 1400
 
-    return () => clearInterval(interval)
+    // ✅ Smooth easing function (easeInOutQuad)
+    const easeInOut = (t) => {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
+    }
+
+    const animate = (timestamp) => {
+      if (!startTimeRef.current) startTimeRef.current = timestamp
+
+      const elapsed = timestamp - startTimeRef.current
+      const linearProgress = Math.min(elapsed / duration, 1)
+      const easedProgress = easeInOut(linearProgress)
+
+      setProgress(easedProgress * 100)
+
+      if (linearProgress < 1) {
+        rafRef.current = requestAnimationFrame(animate)
+      } else {
+        setProgress(100)
+      }
+    }
+
+    rafRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
   }, [])
 
   useEffect(() => {
-    if (progress >= 100) {
-      // Fade out after reaching 100
-      setTimeout(() => setHiding(true), 300)
+    if (progress >= 99.9) {
+      setTimeout(() => setHiding(true), 200)
       setTimeout(() => {
         if (onComplete) onComplete()
-      }, 800)
+      }, 700)
     }
   }, [progress, onComplete])
 
   return (
     <div
-      className={`fixed inset-0 z-9999 bg-[#070714] flex items-center justify-center transition-all duration-500 ${
+      className={`fixed inset-0 z-9999 bg-[#070714] flex items-center justify-center transition-all duration-500 ease-out ${
         hiding ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -42,19 +59,18 @@ const Loader = ({ onComplete }) => {
 
       {/* Content */}
       <div className="relative flex flex-col items-center gap-8 px-6">
-        {/* Logo — Rotating React Atom */}
-        <div className="relative">
+        {/* Logo — Continuous rotating React Atom */}
+        <div className="relative w-20 h-20 flex items-center justify-center">
           {/* Outer glow */}
           <div className="absolute inset-0 rounded-full bg-teal-400/20 blur-2xl animate-pulse" />
 
-          {/* Rotating SVG */}
+          {/* ✅ CSS Animation for smooth rotation */}
           <svg
-            width="80"
-            height="80"
+            width="72"
+            height="72"
             viewBox="-11.5 -10.23 23 20.46"
             xmlns="http://www.w3.org/2000/svg"
-            className="relative text-teal-400 animate-spin-slow"
-            style={{ animationDuration: '3s' }}
+            className="text-teal-400 loader-spin"
           >
             <circle r="2.05" fill="currentColor" />
             <g stroke="currentColor" strokeWidth="1" fill="none">
@@ -67,7 +83,7 @@ const Loader = ({ onComplete }) => {
 
         {/* Text */}
         <div className="text-center">
-          <h1 className="text-white font-bold text-2xl tracking-tight mb-1">
+          <h1 className="text-white font-bold text-2xl tracking-tight mb-2">
             Rehan<span className="text-teal-400">.</span>
           </h1>
           <p className="font-mono text-xs text-neutral-500 uppercase tracking-[0.3em]">
@@ -77,20 +93,27 @@ const Loader = ({ onComplete }) => {
 
         {/* Progress Bar */}
         <div className="w-64 max-w-full">
-          <div className="h-0.5 bg-white/6 rounded-full overflow-hidden">
+          {/* Bar */}
+          <div className="h-0.75 bg-white/6 rounded-full overflow-hidden relative">
             <div
-              className="h-full bg-linear-to-r from-teal-400 to-cyan-500 transition-all duration-200 ease-out"
-              style={{ width: `${Math.min(progress, 100)}%` }}
+              className="h-full rounded-full absolute top-0 left-0"
+              style={{
+                width: `${Math.min(progress, 100)}%`,
+                background:
+                  'linear-gradient(90deg, #2dd4bf 0%, #22d3ee 50%, #2dd4bf 100%)',
+                boxShadow: '0 0 12px rgba(45, 212, 191, 0.6)',
+                willChange: 'width',
+              }}
             />
           </div>
 
           {/* Percentage */}
-          <div className="flex justify-between items-center mt-3">
+          <div className="flex justify-between items-center mt-4">
             <span className="font-mono text-[10px] text-neutral-600 uppercase tracking-widest">
               Please wait
             </span>
-            <span className="font-mono text-xs text-teal-400 font-bold">
-              {Math.min(Math.round(progress), 100)}%
+            <span className="font-mono text-sm text-teal-400 font-bold tabular-nums">
+              {Math.floor(progress)}%
             </span>
           </div>
         </div>

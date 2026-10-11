@@ -3,9 +3,9 @@ import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi'
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="group relative rounded-2xl bg-[#0f0f22] border border-white/[0.06] hover:border-teal-400/30 transition-all duration-300 overflow-hidden hover:-translate-y-1">
+    <div className="group relative rounded-2xl bg-[#0f0f22] border border-white/6 hover:border-teal-400/30 transition-all duration-300 overflow-hidden hover:-translate-y-1">
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#15152a]">
+      <div className="relative aspect-4/3 overflow-hidden bg-[#15152a]">
         {project.image ? (
           <img
             src={project.image}
@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
             }}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1e1e3f] to-[#0f0f22]">
+          <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-[#1e1e3f] to-[#0f0f22]">
             <span className="text-6xl opacity-30">📁</span>
           </div>
         )}

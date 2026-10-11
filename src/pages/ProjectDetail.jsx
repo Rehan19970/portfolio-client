@@ -170,10 +170,10 @@ const ProjectDetail = () => {
               {project.challenges.map((c, i) => (
                 <div
                   key={i}
-                  className="bg-[#0d0d24] border border-white/[0.06] rounded-2xl p-6"
+                  className="bg-[#0d0d24] border border-white/6 rounded-2xl p-6"
                 >
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0">
                       <FiAlertTriangle className="text-orange-400" size={14} />
                     </div>
                     <h3 className="text-white font-bold text-lg">
@@ -207,7 +207,7 @@ const ProjectDetail = () => {
                   key={i}
                   className="flex items-start gap-3 text-neutral-300"
                 >
-                  <FiCheckCircle className="text-teal-400 mt-1 flex-shrink-0" />
+                  <FiCheckCircle className="text-teal-400 mt-1 shrink-0" />
                   <span>{r}</span>
                 </li>
               ))}
@@ -249,7 +249,7 @@ const ProjectDetail = () => {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-20 pt-12 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-20 pt-12 border-t border-white/6 flex flex-wrap items-center justify-between gap-4">
           <button
             onClick={() => navigate('/')}
             className="inline-flex items-center gap-2 text-neutral-400 hover:text-teal-400 transition-colors"
@@ -283,7 +283,7 @@ const Section = ({ title, icon, children }) => (
     <div className="flex items-center gap-3 mb-6">
       <span className="text-2xl">{icon}</span>
       <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
-      <div className="flex-1 h-px bg-gradient-to-r from-white/20 to-transparent" />
+      <div className="flex-1 h-px bg-linear-to-r from-white/20 to-transparent" />
     </div>
     {children}
   </div>
@@ -291,7 +291,7 @@ const Section = ({ title, icon, children }) => (
 
 /* === Info Card === */
 const InfoCard = ({ icon: Icon, label, value }) => (
-  <div className="bg-[#0d0d24] border border-white/[0.06] rounded-xl p-5">
+  <div className="bg-[#0d0d24] border border-white/6 rounded-xl p-5">
     <div className="flex items-center gap-2 text-neutral-500 text-xs font-mono uppercase tracking-wider mb-2">
       <Icon size={12} />
       {label}

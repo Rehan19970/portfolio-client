@@ -9,8 +9,13 @@ import Loader from './components/Loader'
 
 function App() {
   const navigate = useNavigate()
-  const [loading, setLoading] = useState(true)
+  
+  // ✅ Check karein — pehle dikha chuka hai?
+  const [loading, setLoading] = useState(
+    () => !sessionStorage.getItem('loaderShown')
+  )
 
+  // Keyboard shortcut: Ctrl + Shift + A
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
@@ -22,9 +27,15 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyPress)
   }, [navigate])
 
+  const handleLoaderComplete = () => {
+    // ✅ Session storage mein mark karein
+    sessionStorage.setItem('loaderShown', 'true')
+    setLoading(false)
+  }
+
   return (
     <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}
+      {loading && <Loader onComplete={handleLoaderComplete} />}
 
       <AuthProvider>
         <Routes>
